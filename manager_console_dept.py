@@ -28,7 +28,7 @@ def FOLDERS(base):
 def load_config():
     cfg = configparser.ConfigParser()
     if not os.path.exists(CONFIG_PATH):
-        cfg["EMAIL"] = {"from_address": "no-reply@northbay.ca", "recipients": ""}
+        cfg["EMAIL"] = {"from_address": "**********", "recipients": ""}
         cfg["PATHS"] = {"base_dir": r"***************local address****************"}
         cfg["SERVER"] = {"host": "*********", "port": "2000"}
         cfg["UPLOAD"] = {"fadataloader_user": "************", "fadataloader_pass": ""}
@@ -186,12 +186,12 @@ class ManagerConsole(ttk.Frame):
 
     def _build_vars(self):
         v = {
-            "from_address": tk.StringVar(value=self.cfg.get("EMAIL", "from_address", fallback="no-reply@northbay.ca")),
+            "from_address": tk.StringVar(value=self.cfg.get("EMAIL", "from_address", fallback="************")),
             "recipients": tk.StringVar(value=self.cfg.get("EMAIL", "recipients", fallback="")),
-            "base_dir": tk.StringVar(value=self.cfg.get("PATHS", "base_dir", fallback=r"\\v-arisfleet\arisdata\NewDepartmentUpdater")),
-            "host": tk.StringVar(value=self.cfg.get("SERVER", "host", fallback="v-fleetfocustest")),
+            "base_dir": tk.StringVar(value=self.cfg.get("PATHS", "base_dir", fallback=r"***********local address******")),
+            "host": tk.StringVar(value=self.cfg.get("SERVER", "host", fallback="**********")),
             "port": tk.StringVar(value=self.cfg.get("SERVER", "port", fallback="2000")),
-            "fa_user": tk.StringVar(value=self.cfg.get("UPLOAD", "fadataloader_user", fallback="SYSADMIN-ARIS")),
+            "fa_user": tk.StringVar(value=self.cfg.get("UPLOAD", "fadataloader_user", fallback="**********")),
             "fa_pass": tk.StringVar(value=self.cfg.get("UPLOAD", "fadataloader_pass", fallback="")),
             "retain_days": tk.StringVar(value=self.cfg.get("RETENTION", "days", fallback="30")),
         }
