@@ -13,8 +13,8 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 # -------- Constants --------
-FALLBACK_BASE = r"\\v-arisfleet\arisdata\NewDepartmentUpdater"
-ASSETS_DIR = Path(r"\\v-arisfleet\arisdata\DriverLicenceReports\assets")
+FALLBACK_BASE = r"***************local address****************"
+ASSETS_DIR = Path(r"***************local address****************")
 ASSETS_INPUT = ASSETS_DIR / "UnmatchedDepartment.csv"
 ASSETS_ACTIVE = ASSETS_DIR / "Active Operator List.csv"
 
@@ -118,7 +118,7 @@ def send_email_html(from_addr: str, to_addrs: List[str], subject: str, html_body
         msg["To"] = ", ".join(to_addrs)
         msg["Subject"] = subject
         msg.attach(MIMEText(html_body, "html"))
-        with smtplib.SMTP("smtp.northbay.ca", 25, timeout=30) as s:
+        with smtplib.SMTP("**********", 25, timeout=30) as s:
             try:
                 s.starttls()
             except Exception:
