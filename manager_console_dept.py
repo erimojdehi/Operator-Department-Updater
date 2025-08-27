@@ -29,9 +29,9 @@ def load_config():
     cfg = configparser.ConfigParser()
     if not os.path.exists(CONFIG_PATH):
         cfg["EMAIL"] = {"from_address": "no-reply@northbay.ca", "recipients": ""}
-        cfg["PATHS"] = {"base_dir": r"\\v-arisfleet\arisdata\NewDepartmentUpdater"}
-        cfg["SERVER"] = {"host": "v-fleetfocustest", "port": "2000"}
-        cfg["UPLOAD"] = {"fadataloader_user": "SYSADMIN-ARIS", "fadataloader_pass": ""}
+        cfg["PATHS"] = {"base_dir": r"***************local address****************"}
+        cfg["SERVER"] = {"host": "*********", "port": "2000"}
+        cfg["UPLOAD"] = {"fadataloader_user": "************", "fadataloader_pass": ""}
         cfg["RETENTION"] = {"days": "30"}
         with open(CONFIG_PATH, "w", encoding="utf-8") as f:
             cfg.write(f)
